@@ -76,7 +76,7 @@ Handle<Value> FixLogin(const Arguments& args) {
 int ft_FixLogout(){
     FARPROC lpfnGetProcessID = GetProcAddress(HMODULE (fixtools),
                                                 "FixLogout@0");
-    typedef int (__stdcall * pICFUNC)();
+    typedef int (__stdcall *pICFUNC)();
     pICFUNC MyFunction = pICFUNC(lpfnGetProcessID);
     int intMyReturnVal = MyFunction();
     return intMyReturnVal;
